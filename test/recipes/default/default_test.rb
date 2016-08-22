@@ -12,3 +12,7 @@ end
 describe directory('/usr/share/elasticsearch/plugins/head') do
     it { should exist }
 end
+
+describe port(9200) do
+    it { should be_listening }
+end
