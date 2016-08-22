@@ -20,3 +20,7 @@ elasticsearch_install 'elasticsearch' do
 end
 elasticsearch_configure 'elasticsearch'
 elasticsearch_service 'elasticsearch'
+
+elasticsearch_plugin 'head' do
+  url 'mobz/elasticsearch-head'
+end

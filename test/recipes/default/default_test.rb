@@ -8,3 +8,7 @@
 describe command('java') do
     it { should exist }
 end
+
+describe directory('/usr/share/elasticsearch/plugins/head') do
+    it { should exist }
+end
