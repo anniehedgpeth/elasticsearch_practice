@@ -4,6 +4,9 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
+user 'base' do
+end
+
 node.default['java']['jdk_version'] = '7'
 include_recipe 'java'
 

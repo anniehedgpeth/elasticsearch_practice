@@ -7,13 +7,27 @@ provisioner:
 
 verifier:
   name: inspec
+  format: documentation
+
 
 platforms:
   - name: ubuntu-16.04
 #  - name: centos-7.2
 
 suites:
-  - name: default
+  - name: client
     run_list:
       - recipe[elasticsearch_practice::default]
+      - recipe[elasticsearch_practice::client]
     attributes:
+    verifier:
+      inspec_tests:
+        - /Users/anniehedgpeth/chef_repo/profiles/practice-inspec-profile
+  - name: server
+    run_list:
+      - recipe[elasticsearch_practice::server]
+    attributes:  
+    verifier:
+      inspec_tests:
+        - /Users/anniehedgpeth/chef_repo/profiles/practice-inspec-profile
+#        - https://github.com/anniehedgpeth/
